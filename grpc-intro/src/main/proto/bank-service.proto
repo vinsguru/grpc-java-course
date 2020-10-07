@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models";
+
+message BalanceCheckRequest {
+  int32 account_number = 1;
+}
+
+// USD
+message Balance {
+  int32 amount = 1;
+}
+
+message WithdrawRequest {
+  int32 account_number = 1;
+  int32 amount = 2;
+}
+
+message Money {
+  int32 value = 1;
+}
+
+message DepositRequest {
+  int32 account_number = 1;
+  int32 amount = 2;
+}
+
+service BankService {
+
+  //unary
+  rpc getBalance(BalanceCheckRequest) returns (Balance);
+
+  // server-side streaming
+  rpc withdraw(WithdrawRequest) returns(stream Money);
+
+  // client-side streaming
+  rpc cashDeposit(stream DepositRequest) returns (Balance);
+}
+
