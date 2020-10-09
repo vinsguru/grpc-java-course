@@ -26,6 +26,16 @@ message DepositRequest {
   int32 amount = 2;
 }
 
+enum ErrorMessage {
+  ONLY_TEN_MULTIPLES = 0;
+  INSUFFICIENT_BALANCE = 1;
+}
+
+message WithdrawalError {
+  ErrorMessage error_message = 1;
+  int32 amount = 2;
+}
+
 service BankService {
 
   //unary
