@@ -1,0 +1,10 @@
+id, title, year,rating,genre
+1, The Shawshank Redemption, 1994,9.3,DRAMA
+2, The godfather, 1972, 9.2,DRAMA
+3, Pulp Fiction, 1994, 8.9,CRIME,
+4, The good the bad and the ugly, 1966, 8.8,WESTERN
+5, Inception, 2010, 8.8,ACTION
+6, Se7en, 1995, 8.6,CRIME
+7, City of god, 2002, 8.06,CRIME
+8, Django unchained, 2012, 8.4,WESTERN
+9, Oldboy, 2003, 8.4,ACTION

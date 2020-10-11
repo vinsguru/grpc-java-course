@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models";
+
+message BalanceCheckRequest {
+  int32 account_number = 1;
+}
+
+// USD
+message Balance {
+  int32 amount = 1;
+}
+
+service BankService {
+  rpc getBalance(BalanceCheckRequest) returns (Balance);
+}
