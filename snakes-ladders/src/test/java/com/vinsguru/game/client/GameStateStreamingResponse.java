@@ -28,7 +28,7 @@ public class GameStateStreamingResponse implements StreamObserver<GameState> {
                 .anyMatch(p -> p.getPosition() == 100);
         if(isGameOver){
             System.out.println("Game Over!");
-            this.onCompleted();
+            this.dieStreamObserver.onCompleted();
         }else{
             Uninterruptibles.sleepUninterruptibly(1, TimeUnit.SECONDS);
             this.roll();
@@ -43,6 +43,7 @@ public class GameStateStreamingResponse implements StreamObserver<GameState> {
 
     @Override
     public void onCompleted() {
+        System.out.println("Completed");
         this.latch.countDown();
     }
 
