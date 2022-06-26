@@ -1,4 +1,4 @@
-id, title, year,rating,genre
+id, title, release_year,rating,genre
 1, The Shawshank Redemption, 1994,9.3,DRAMA
 2, The godfather, 1972, 9.2,DRAMA
 3, Pulp Fiction, 1994, 8.9,CRIME,
