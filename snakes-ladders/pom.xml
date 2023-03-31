@@ -7,22 +7,24 @@
     <groupId>com.vinsguru</groupId>
     <artifactId>snakes-ladders</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <properties>
+        <grpc.java.version>1.54.0</grpc.java.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
-            <version>1.49.0</version>
+            <version>${grpc.java.version}</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
-            <version>1.49.0</version>
+            <version>${grpc.java.version}</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-stub</artifactId>
-            <version>1.49.0</version>
+            <version>${grpc.java.version}</version>
         </dependency>
         <dependency> <!-- necessary for Java 9+ -->
             <groupId>org.apache.tomcat</groupId>
@@ -43,7 +45,7 @@
             <extension>
                 <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>
-                <version>1.6.2</version>
+                <version>1.7.1</version>
             </extension>
         </extensions>
         <plugins>
@@ -51,8 +53,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -61,11 +63,11 @@
                 <version>0.6.1</version>
                 <configuration>
                     <protocArtifact>
-                        com.google.protobuf:protoc:3.21.1:exe:${os.detected.classifier}
+                        com.google.protobuf:protoc:3.21.7:exe:${os.detected.classifier}
                     </protocArtifact>
                     <pluginId>grpc-java</pluginId>
                     <pluginArtifact>
-                        io.grpc:protoc-gen-grpc-java:1.49.0:exe:${os.detected.classifier}
+                        io.grpc:protoc-gen-grpc-java:${grpc.java.version}:exe:${os.detected.classifier}
                     </pluginArtifact>
                     <protoSourceRoot>
                         ${basedir}/src/main/proto/
