@@ -1,0 +1,9 @@
+import "common/car.proto";
+
+
+message Dealer {
+  message ListOfCars{
+    repeated common.Car cars = 1;
+  }
+  map<string,ListOfCars> car = 1 ;
+}

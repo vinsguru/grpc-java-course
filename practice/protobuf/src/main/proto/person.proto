@@ -1,0 +1,22 @@
+syntax = "proto3";
+import "common/car.proto";
+import "common/address.proto";
+import "google/protobuf/wrappers.proto";
+
+
+option java_multiple_files = true;
+option java_package = "org.udemy.models";
+
+/*
+This is a person proto file
+ */
+
+message Person {
+  //name field
+  string name = 1;
+
+  //age field
+  google.protobuf.Int32Value  age = 2;
+  repeated common.Car car = 3;
+  common.Address address = 4;
+}
