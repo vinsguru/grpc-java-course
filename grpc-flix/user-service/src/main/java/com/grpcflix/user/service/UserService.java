@@ -10,7 +10,8 @@ import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.transaction.Transactional;
+// import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 @GrpcService
 public class UserService extends UserServiceGrpc.UserServiceImplBase {
