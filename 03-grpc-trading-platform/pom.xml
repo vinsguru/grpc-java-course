@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.2</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.vinsguru</groupId>
+	<artifactId>grpc-trading-platform</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>grpc-trading-platform</name>
+	<description>Demo project for Spring Boot</description>
+    <modules>
+		<module>proto</module>
+		<module>user-service</module>
+		<module>aggregator-service</module>
+	</modules>
+    <properties>
+		<java.version>21</java.version>
+		<grpc.java.version>1.58.0</grpc.java.version>
+		<tomcat.annotations.version>6.0.53</tomcat.annotations.version>
+		<protoc.version>3.24.0</protoc.version>
+		<protobuf.maven.plugin.version>0.6.1</protobuf.maven.plugin.version>
+		<os.maven.plugin.version>1.7.1</os.maven.plugin.version>
+		<grpc.spring.version>2.15.0.RELEASE</grpc.spring.version>
+		<protobuf.java.util.version>3.24.0</protobuf.java.util.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.vinsguru</groupId>
+				<artifactId>proto</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.devh</groupId>
+				<artifactId>grpc-server-spring-boot-starter</artifactId>
+				<version>${grpc.spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.devh</groupId>
+				<artifactId>grpc-client-spring-boot-starter</artifactId>
+				<version>${grpc.spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.protobuf</groupId>
+				<artifactId>protobuf-java-util</artifactId>
+				<version>${protobuf.java.util.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.grpc</groupId>
+				<artifactId>grpc-testing</artifactId>
+				<version>${grpc.java.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

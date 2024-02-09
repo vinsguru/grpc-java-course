@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package user;
+
+import "common/common.proto";
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.user";
+
+message UserInformationRequest{
+  int32 user_id = 1;
+}
+
+message UserInformation {
+  int32 user_id = 1;
+  string name = 2;
+  int32 balance = 3;
+  repeated Holding holdings = 4;
+}
+
+message Holding {
+  common.Ticker ticker = 1;
+  int32 quantity = 2;
+}
+
+enum TradeAction {
+  BUY = 0;
+  SELL = 1;
+}
+
+message StockTradeRequest {
+  int32 user_id = 1;
+  common.Ticker ticker = 2;
+  int32 price = 3;
+  int32 quantity = 4;
+  TradeAction action = 5;
+}
+
+message StockTradeResponse {
+  int32 user_id = 1;
+  common.Ticker ticker = 2;
+  int32 price = 3;
+  int32 quantity = 4;
+  TradeAction action = 5;
+  int32 total_price = 6;
+  int32 balance = 7;
+}
+
+service UserService {
+
+  rpc GetUserInformation(UserInformationRequest) returns (UserInformation);
+
+  rpc TradeStock(StockTradeRequest) returns (StockTradeResponse);
+
+}

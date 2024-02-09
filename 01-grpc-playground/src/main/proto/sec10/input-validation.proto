@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package sec10;
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models.sec10";
+
+message BalanceCheckRequest {
+  int32 account_number = 1;
+}
+
+message AccountBalance {
+  int32 account_number = 1;
+  int32 balance = 2;
+}
+
+message WithdrawRequest {
+  int32 account_number = 1;
+  int32 amount = 2;
+}
+
+message Money {
+  int32 amount = 1;
+}
+
+enum ValidationCode {
+  INVALID_ACCOUNT = 0;
+  INVALID_AMOUNT = 1;
+  INSUFFICIENT_BALANCE = 2;
+}
+
+message ErrorMessage {
+  ValidationCode validation_code = 1;
+}
+
+service BankService {
+  /*
+      Unary
+      - account number should be between 1 and 10
+   */
+  rpc GetAccountBalance(BalanceCheckRequest) returns (AccountBalance);
+
+  /*
+      Server streaming
+      - account number should be between 1 and 10
+      - amount should be 10 multiples
+      - account should have enough balance
+   */
+  rpc Withdraw(WithdrawRequest) returns (stream Money);
+
+}

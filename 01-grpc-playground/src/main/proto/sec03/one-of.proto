@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package sec03;
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models.sec03";
+
+message Email {
+  string address = 1;
+  string password = 2;
+}
+
+message Phone {
+  int32 number = 1;
+  int32 code = 2;
+}
+
+message Credentials{
+  oneof login_type {
+    Email email = 1;
+    Phone phone = 2;
+  }
+}

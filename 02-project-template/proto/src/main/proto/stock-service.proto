@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package stock;
+
+import "google/protobuf/empty.proto";
+import "common/common.proto";
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.stock";
+
+message PriceUpdate {
+  common.Ticker ticker = 1;
+  int32 price = 2;
+}
+
+message StockPriceRequest {
+  common.Ticker ticker = 1;
+}
+
+message StockPriceResponse {
+  common.Ticker ticker = 1;
+  int32 price = 2;
+}
+
+// Service for providing stock prices.
+service StockService {
+
+  // Unary API to get the current price for a specific ticker.
+  rpc GetStockPrice(StockPriceRequest) returns (StockPriceResponse);
+
+  // Server streaming API to subscribe to real-time price updates.
+  rpc GetPriceUpdates(google.protobuf.Empty) returns (stream PriceUpdate);
+
+}

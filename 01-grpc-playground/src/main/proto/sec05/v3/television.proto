@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package sec05.v3;
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models.sec05.v3";
+
+/*
+    Requirement:
+    - We NO longer need model/year! remove that!
+ */
+message Television {
+  string brand = 1;
+
+  reserved 2;
+  reserved "year", "model";
+
+  Type type = 3;
+}
+
+enum Type {
+  HD = 0;
+  UHD = 1;
+  OLED = 2;
+}

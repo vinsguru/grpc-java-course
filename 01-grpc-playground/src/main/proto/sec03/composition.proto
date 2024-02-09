@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package sec03;
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models.sec03";
+
+message Address {
+  string street = 1;
+  string city = 2;
+  string state = 3;
+}
+
+message Student {
+  string name = 1;
+  Address address = 2;
+}
+
+message School {
+  int32 id = 1;
+  string name = 2;
+  Address address = 3;
+}

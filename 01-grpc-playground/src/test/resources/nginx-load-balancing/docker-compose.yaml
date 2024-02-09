@@ -1,0 +1,8 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:1.25-alpine
+    volumes:
+      - ./config:/etc/nginx/conf.d
+    ports:
+      - "8585:8585"

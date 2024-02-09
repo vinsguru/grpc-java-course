@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package sec05.v1;
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models.sec05.v1";
+
+message Television {
+  string brand = 1;
+  int32 year = 2;
+}

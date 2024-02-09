@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package sec04.common;
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models.common";
+
+message Address {
+  string street = 1;
+  string city = 2;
+  string state = 3;
+}

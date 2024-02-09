@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package sec08;
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models.sec08";
+
+message GuessRequest {
+  int32 guess = 1;
+}
+
+enum Result {
+  CORRECT = 0;
+  TOO_LOW = 1;
+  TOO_HIGH = 2;
+}
+
+message GuessResponse {
+  int32 attempt = 1;
+  Result result = 2;
+}
+
+service GuessNumber {
+  rpc MakeGuess(stream GuessRequest) returns (stream GuessResponse);
+}
