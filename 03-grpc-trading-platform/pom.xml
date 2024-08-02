@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.2</version>
+		<version>3.3.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.vinsguru</groupId>
@@ -19,15 +19,15 @@
 		<module>user-service</module>
 		<module>aggregator-service</module>
 	</modules>
-    <properties>
+	<properties>
 		<java.version>21</java.version>
 		<grpc.java.version>1.58.0</grpc.java.version>
 		<tomcat.annotations.version>6.0.53</tomcat.annotations.version>
-		<protoc.version>3.24.0</protoc.version>
+		<protoc.version>3.25.1</protoc.version>
 		<protobuf.maven.plugin.version>0.6.1</protobuf.maven.plugin.version>
 		<os.maven.plugin.version>1.7.1</os.maven.plugin.version>
-		<grpc.spring.version>2.15.0.RELEASE</grpc.spring.version>
-		<protobuf.java.util.version>3.24.0</protobuf.java.util.version>
+		<grpc.spring.version>3.1.0.RELEASE</grpc.spring.version>
+		<protobuf.java.util.version>3.25.4</protobuf.java.util.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
