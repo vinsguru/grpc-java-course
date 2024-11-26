@@ -10,15 +10,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <grpc.version>1.65.0</grpc.version>
-        <protoc.version>3.25.1</protoc.version>
-        <logback.version>1.5.6</logback.version>
-        <jackson.version>2.17.2</jackson.version>
+        <grpc.version>1.68.1</grpc.version>
+        <protoc.version>3.25.5</protoc.version>
+        <logback.version>1.5.12</logback.version>
+        <jackson.version>2.18.1</jackson.version>
         <tomcat.annotations.version>6.0.53</tomcat.annotations.version>
         <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
         <protobuf.maven.plugin.version>0.6.1</protobuf.maven.plugin.version>
-        <junit.version>5.10.3</junit.version>
-        <surefire.version>3.3.1</surefire.version>
+        <junit.version>5.11.3</junit.version>
+        <surefire.version>3.5.2</surefire.version>
     </properties>
 
     <dependencies>
